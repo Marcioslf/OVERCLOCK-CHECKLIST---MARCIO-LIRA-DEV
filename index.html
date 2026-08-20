@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overclock Checklist</title>
+    <meta name="theme-color" content="#0b0c10" />
+    <meta name="description" content="Checklist e bloco de notas de alta produtividade da Overclock com métricas semanais, histórico de tarefas e estúdio de geração de avatares com IA." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        function makeSettable(target, prop) {
+          if (!target) return;
+          try {
+            var desc = Object.getOwnPropertyDescriptor(target, prop);
+            if (desc && desc.set) return; // already has a setter
+            var originalVal = target[prop];
+            var currentVal = originalVal;
+            Object.defineProperty(target, prop, {
+              get: function() {
+                return currentVal;
+              },
+              set: function(v) {
+                currentVal = v;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (e) {
+            try {
+              target[prop] = target[prop];
+            } catch (ignored) {}
+          }
+        }
+
+        var targets = [];
+        if (typeof window !== 'undefined') targets.push(window);
+        if (typeof globalThis !== 'undefined') targets.push(globalThis);
+        if (typeof self !== 'undefined') targets.push(self);
+        if (typeof Window !== 'undefined' && Window.prototype) targets.push(Window.prototype);
+
+        var props = ['fetch', 'FormData', 'Response', 'Request', 'Headers'];
+
+        targets.forEach(function(target) {
+          props.forEach(function(p) {
+            makeSettable(target, p);
+          });
+        });
+      })();
+    </script>
+  </head>
+  <body class="bg-[#0b0c10] text-[#f3f2ee] antialiased selection:bg-[#b9ff5f] selection:text-[#0b0c10]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

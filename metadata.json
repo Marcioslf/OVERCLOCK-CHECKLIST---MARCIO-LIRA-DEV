@@ -1,0 +1,8 @@
+{
+  "name": "Overclock Checklist",
+  "description": "Checklist e bloco de notas de alta produtividade da Overclock com métricas semanais, histórico de tarefas e estúdio de geração de avatares e imagens com IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
